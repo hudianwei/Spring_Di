@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="springuser" class="com.spring.di.User">
+        <property name="username" value="测试值为1"></property>
+    </bean>
+    <bean id="userservice" class="com.spring.di.UserService"></bean>
+    <bean id="sringuserservice" class="com.spring.di.User">
+        <property name="userservice" ref="userservice"></property>
+    </bean>
+    <bean id="userlist" class="com.spring.di.User">
+        <property name="usernamelist">
+            <list>
+                <value>胡殿威</value>
+                <value>威震天</value>
+            </list>
+        </property>
+    </bean>
+    <bean id="pro" class="com.spring.di.User">
+        <property name="props">
+            <props>
+                <prop key="url">这是测试的URL</prop>
+            </props>
+        </property>
+    </bean>
+</beans>
